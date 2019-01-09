@@ -14,7 +14,12 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        recipe: {
+        ingredients: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            len: [1]
+        },
+        directions: {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]

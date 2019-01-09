@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="container">
+        <!-- Header for blog -->
+        <div class="jumbotron">
+            <h1 class="text-center">
+                <strong> What do you Need!!</strong>
+            </h1>     
+            
+        </div>
+        <!-- User data for items -->
+        <div class="card">
+            <div class="card-header">
+                <h5>What your Ingredients</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Foods</th>
+                            <th scope="col">Spices</th>
+                            <th scope="col">KitchenWare</th>
+                            <th scope="col">Instructions</th>                            
+                        </tr>
+                    </thead>
+                    <tbody id="dataRow"></tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <!--- Add User instructions-input-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header" id="add-items">
+                        <h5 class="card-title">Add Ingredients</h5>
+                    </div>
+                    <div class="card-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="name-input">Food Name:</label>
+                                <input class="form-control" id="name-input" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="spices-input">Spices:</label>
+                                <input class="form-control" id="spices-input" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="kitchen-input">KitchenWare:</label>
+                                <input class="form-control" id="kitchen-input" type="cookware">
+                            </div>
+                            <div class="form-group">
+                                <label for="instructions-input">Instructions</label>
+                                <input class="form-control" id="frequency-input" type="text">
+                            </div>
+                            <button class="btn btn-primary" id="add-user" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>
