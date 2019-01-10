@@ -12,6 +12,13 @@ module.exports = function (app) {
         })
     });
 
+    app.get("/create", function (req, res) {
+        db.Region.findAll({
+        }).then(function (result) {
+            res.render("create", { regions: result });
+        })
+    });
+
     app.get("/northamerica", function (req, res) {
         db.Foods.findAll({
             where: {
