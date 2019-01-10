@@ -39,7 +39,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         upvotes: {
             type: DataTypes.SMALLINT,
-            allowNull: false,
             defaultValue: 1
         }
     });

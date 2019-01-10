@@ -1,18 +1,21 @@
-// Get references to page elements
-var $foodName = $("#food-name");
-var $ingredients = $("#ingredients");
-var $directions = $("#directions");
-var $submitBtn = $("#submit");
-
-var API = {
-  saveRecipe: function (example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/recipes",
-      data: JSON.stringify(example)
-    });
-  }
-};
+$("#submit").on("click", function () {
+  event.preventDefault();
+  
+  var obj = {
+    authorName : $("#author_name").val(),
+    foodName : $("#food_name").val(),
+    ingredients : $("#ingredients").val(),
+    directions : $("#directions").val(),
+    region_name : $("#region").val(),
+    video_url : $("#video").val(),
+    country : $("#country").val(),
+    submitBtn : $("#submit").val(),
+  };
+  
+  if (!(obj.authorName && obj.foodName && obj.ingredients && obj.directions && obj.region)) {
+    alert("You must enter all of areas except for Country and video");
+    return;
+  };
+  
+  $.post("/api/foods", obj).then(function (data) {});
+});
