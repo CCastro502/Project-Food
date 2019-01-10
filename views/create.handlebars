@@ -6,7 +6,11 @@
           <h5 class="card-title">Add a Delicious Recipe</h5>
           <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="food-name">Name</label>
+            <label for="author-name">Author Name</label>
+            <input type="text" id="author-name" class="form-control" aria-describedby="author-name" placeholder="Austin">
+          </div>
+          <div class="form-group">
+            <label for="food-name">Food Name</label>
             <input type="text" id="food-name" class="form-control" aria-describedby="food-name" placeholder="Tacos">
           </div>
           <div class="form-group">
@@ -16,6 +20,7 @@
           <div class="form-group">
             <label for="directions">Cook'n Directions</label>
             <input type="text" id="directions" class="form-control" aria-describedby="directions" placeholder="Bake on high for...">
+            <br>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="region" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Region
@@ -29,13 +34,14 @@
               <a class="dropdown-item" href="#">Austrlia</a>
             </div>
           </div>
+          <br>
             <div class="form-group">
-            <label for="video">Video</label>
+            <label for="video">Video URL</label>
             <textarea class="form-control" id="video" aria-describedby="video" placeholder="Url"></textarea>
           </div>
           <div class="form-group">
-            <label for="country">Country</label>
-            <textarea class="form-control" id="country" aria-describedby="country" placeholder="France"></textarea>
+            <label for="country">Country of Origin</label>
+            <textarea class="form-control" id="country" aria-describedby="country" placeholder="Mexico"></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Create</button>
         </form>
@@ -44,3 +50,5 @@
     </div>
   </div>
 </div>
+<br>
+<br>
