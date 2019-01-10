@@ -6,8 +6,9 @@ module.exports = function (app) {
     // 
 
     app.get("/", function (req, res) {
-        db.Regions.findAll({}).then(function (result) {
-            res.render('', {data: result});
+        db.Region.findAll({
+        }).then(function (result) {
+            res.render("index", { regions: result });
         })
     });
 
@@ -17,7 +18,7 @@ module.exports = function (app) {
                 region_name: "North America"
             }
         }).then(function (result) {
-            res.render('', {data: result});
+            res.render('', { data: result });
         })
     });
 
@@ -27,7 +28,7 @@ module.exports = function (app) {
                 region_name: "South America"
             }
         }).then(function (result) {
-            res.render('', {data: result});
+            res.render('', { data: result });
         })
     });
 
@@ -37,7 +38,7 @@ module.exports = function (app) {
                 region_name: "Europe"
             }
         }).then(function (result) {
-            res.render('', {data: result});
+            res.render('', { data: result });
         })
     });
 
@@ -47,7 +48,7 @@ module.exports = function (app) {
                 region_name: "Asia"
             }
         }).then(function (result) {
-            res.render('', {data: result});
+            res.render('', { data: result });
         })
     });
 
@@ -57,7 +58,7 @@ module.exports = function (app) {
                 region_name: "Africa"
             }
         }).then(function (result) {
-            res.render('', {data: result});
+            res.render('', { data: result });
         })
     });
 
@@ -67,22 +68,22 @@ module.exports = function (app) {
                 region_name: "Australia"
             }
         }).then(function (result) {
-            res.render('', {data: result});
+            res.render('', { data: result });
         })
     });
 
     // 
     // API
     // 
-    
+
     app.get("/api/foods", function (req, res) {
         db.Foods.findAll({}).then(function (result) {
-            res.render('index', {data: result})
+            res.render('index', { data: result })
         })
     });
 
     app.get("/api/:region", function (req, res) {
-        db.Regions.findAll({
+        db.Region.findAll({
             where: {
                 region_name: req.params.region
             }
@@ -140,7 +141,7 @@ module.exports = function (app) {
     });
 
     app.put("api/:region", function (req, res) {
-        db.Regions.update({
+        db.Region.update({
             posts: sequelize.literal('posts + 1')
         }, {
                 where: {
@@ -154,9 +155,9 @@ module.exports = function (app) {
         db.Foods.update({
             upvotes: sequelize.literal('upvotes + 1')
         }, {
-            where: {
-                id: req.params.id
-            }
-        })
+                where: {
+                    id: req.params.id
+                }
+            })
     })
 }
