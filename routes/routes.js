@@ -99,18 +99,27 @@ module.exports = function (app) {
     // 
     // HTML Routes
     // 
-    
+
     app.get("/", function (req, res) {
-        db.Region.findAll({
-        }).then(function (result) {
-            return res.render("index", { regions: result });
+        db.Region.bulkCreate([
+            { region_name: 'North America', posts: 1 },
+            { region_name: 'South America', posts: 1 },
+            { region_name: 'Europe', posts: 1 },
+            { region_name: 'Asia', posts: 1 },
+            { region_name: 'Africa', posts: 1 },
+            { region_name: 'Australia', posts: 1 }
+        ]).then(function () {
+            db.Region.findAll({
+            }).then(function (result) {
+                return res.render("index", { regions: result });
+            })
         })
     });
 
     app.get("/create", function (req, res) {
         return res.render("create");
     });
-    
+
     app.get("/:region", function (req, res) {
         db.Food.findAll({
             where: {
