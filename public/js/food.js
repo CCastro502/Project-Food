@@ -2,8 +2,11 @@
 var $foodName = $("#food-name");
 var $ingredients = $("#ingredients");
 var $directions = $("#directions");
+var $region = $("#region");
+var $video= $("#video");
 var $submitBtn = $("#submit");
 
+// Ingredients 
 var API = {
   saveRecipe: function (example) {
     return $.ajax({
@@ -16,3 +19,4 @@ var API = {
     });
   }
 };
+
