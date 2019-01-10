@@ -104,12 +104,12 @@ module.exports = function (app) {
         db.Region.findAll({}).then(function (result) {
             if (result.length === 0) {
                 db.Region.bulkCreate([
-                    { region_name: 'North America', posts: 1 },
-                    { region_name: 'South America', posts: 1 },
-                    { region_name: 'Europe', posts: 1 },
-                    { region_name: 'Asia', posts: 1 },
-                    { region_name: 'Africa', posts: 1 },
-                    { region_name: 'Australia', posts: 1 }
+                    { formal_region_name: 'North America', url_region_name: "northamerica" },
+                    { formal_region_name: 'South America', url_region_name: "southamerica" },
+                    { formal_region_name: 'Europe', url_region_name: "europe" },
+                    { formal_region_name: 'Asia', url_region_name: "asia" },
+                    { formal_region_name: 'Africa', url_region_name: "africa" },
+                    { formal_region_name: 'Australia', url_region_name: "australia" }
                 ]).then(function () {
                     return res.render("index", { regions: result });
                 })
@@ -119,27 +119,27 @@ module.exports = function (app) {
         })
     });
 
-app.get("/create", function (req, res) {
-    return res.render("create");
-});
+    app.get("/create", function (req, res) {
+        return res.render("create");
+    });
 
-app.get("/:region", function (req, res) {
-    db.Food.findAll({
-        where: {
-            region_name: req.params.region
-        }
-    }).then(function (result) {
-        return res.render("index", { foods: result });
-    })
-});
+    app.get("/:region", function (req, res) {
+        db.Food.findAll({
+            where: {
+                url_region_name: req.params.region
+            }
+        }).then(function (result) {
+            return res.render("index", { foods: result });
+        })
+    });
 
-app.get("/:region/:id", function (req, res) {
-    db.Food.findOne({
-        where: {
-            id: req.params.id
-        }
-    }).then(function (result) {
-        return res.render("item", { foods: result });
-    })
-});
+    app.get("/:region/:id", function (req, res) {
+        db.Food.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (result) {
+            return res.render("item", { foods: result });
+        })
+    });
 }

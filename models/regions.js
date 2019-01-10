@@ -1,12 +1,15 @@
 module.exports = function (sequelize, DataTypes) {
     var Region = sequelize.define("Region", {
-        region_name: {
+        formal_region_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        url_region_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         posts: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             defaultValue: 0
         },
     });
