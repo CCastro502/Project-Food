@@ -126,7 +126,7 @@ module.exports = function (app) {
     app.get("/:region", function (req, res) {
         db.Food.findAll({
             where: {
-                url_region_name: req.params.region
+                region_name: req.params.region
             }
         }).then(function (result) {
             return res.render("index", { foods: result });

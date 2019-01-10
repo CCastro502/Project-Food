@@ -1,9 +1,14 @@
 $("#submit").on("click", function () {
   event.preventDefault();
   
+  if ($("#author-name").val().length < 1 || $("#food-name").val().length < 1 || $("#ingredients").val().length < 1 || $("#directions").val().length < 1 || $("#region").val().length < 1)  {
+    alert("You must enter all of areas except for ountry and video");
+    return;
+  };
+
   var obj = {
-    authorName : $("#author_name").val(),
-    foodName : $("#food_name").val(),
+    author_name : $("#author-name").val(),
+    food_name : $("#food-name").val(),
     ingredients : $("#ingredients").val(),
     directions : $("#directions").val(),
     region_name : $("#region").val(),
@@ -11,11 +16,22 @@ $("#submit").on("click", function () {
     country : $("#country").val(),
     submitBtn : $("#submit").val(),
   };
+
   
-  if (!(obj.authorName && obj.foodName && obj.ingredients && obj.directions && obj.region)) {
-    alert("You must enter all of areas except for Country and video");
-    return;
-  };
-  
-  $.post("/api/foods", obj).then(function (data) {});
+  // $.post("/api/foods", obj).then(function (data) {});
+  $.ajax({
+    type: "POST",
+    url: "api/foods",
+    data: obj
+  })
+
+  console.log(obj);
+    $.ajax("/api/" + obj.region_name, {
+        type: "PUT",
+        data: obj
+    }).then(function() {
+        console.log(`New Region: ${obj}`);
+        // if (err) throw err;
+        location.reload();
+    });
 });
