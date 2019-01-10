@@ -5,16 +5,17 @@
 <div class="card-body">
     <table class="table table-bordered" style="width: 100%">
         {{#each regions}}
-        <a href='/{{this.id}}'>
-            <tr>
-                <th>
-                    <h2>{{this.region_name}}</h2>
-                </th>
-                <th>
-                    <p>{{this.updatedAt}}</p>
-                    <p>{{this.post}}</p>
-                </th>
-            </tr>
+        <tr>
+            <th>
+                <a href='/{{this.url_region_name}}'>
+                    <h2>{{this.formal_region_name}}</h2>
+                </a>
+            </th>
+            <th>
+                <p>{{this.updatedAt}}</p>
+                <p>{{this.posts}}</p>
+            </th>
+        </tr>
         </a>
         {{/each}}
     </table>
