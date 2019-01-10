@@ -63,26 +63,16 @@ module.exports = function (app) {
         })
     });
 
-    app.post("/api/foods", function (req, res) {
-        if (req.body.length > 0) {
-            db.Foods.create(req.body).then(function (result) {
-                return res.json(result);
-            })
-        }
-    });
-
-    app.put("/api/:region", function (req, res) {
-        db.Region.update({
-            posts: sequelize.literal('posts + 1')
-        }, {
-                where: {
-                    region_name: req.params.region
-                }
-            }
-        ).then(function (result) {
-            return res.json(result);
+    app.post("/api/:region", function (req, res) {
+        console.log("Length", req.body.length);
+        db.Food.create(req.body).then(function (result) {
+           // console.log("The food table create", result);
+            db.Region.increment(['posts'], { where: { url_region_name: req.params.region } }).then(function (results) {
+                console.log({ foods: result, regions: results });
+                res.json({ foods: result });
+            });
         });
-    })
+    });
 
     app.put("/api/foods/id/:id/upvotes", function (req, res) {
         db.Food.update({
@@ -126,7 +116,7 @@ module.exports = function (app) {
     app.get("/:region", function (req, res) {
         db.Food.findAll({
             where: {
-                url_region_name: req.params.region
+                region_name: req.params.region
             }
         }).then(function (result) {
             return res.render("index", { foods: result });
