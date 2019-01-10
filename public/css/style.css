@@ -1,0 +1,41 @@
+body{
+    background-image: url("https://www.healthline.com/hlcmsresource/images/AN_images/why-a-calorie-is-not-a-calorie-1296x728-feature.jpg");
+    background-repeat: repeat-x;
+    background-image: url("https://encrypted-t-xrepeat-xbn0.gstatic.com/images?q=tbn:ANd9GcRph6BaNAAmqG32o51S48fXqh8NtOSr0jcw3OfjVaMfX0gDJODTJA")no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.forum-topic{
+    width:60%;
+}
+
+  .container:hover .overlay {
+    opacity: 1;
+  }
+  
+  
+  tr{
+      opacity: .75;
+      background-color:rgba(255, 255, 255, 0.5);
+  }
+  .navbar-brand{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Libre Barcode 128 Text', cursive;
+      display: block;
+      border: 1px solid black;  
+      float: left;
+      /* margin-left: 450px;   */
+    font-size: 75px;    
+    text-align: center;
+    width: 100%;
+    letter-spacing: 170px;
+    padding-bottom: 0px;
+    height: 1
+    margin: auto;
+  }
+
+  p{
+      text-align: center;
+  }
