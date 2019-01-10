@@ -20,22 +20,19 @@
           <div class="form-group">
             <label for="directions">Cook'n Directions</label>
             <input type="text" id="directions" class="form-control" aria-describedby="directions" placeholder="Bake on high for...">
-            <br>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="region" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Region
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">North America</a>
-              <a class="dropdown-item" href="#">South America</a>
-              <a class="dropdown-item" href="#">Africa</a>
-              <a class="dropdown-item" href="#">Asia</a>
-              <a class="dropdown-item" href="#">Europe</a>
-              <a class="dropdown-item" href="#">Austrlia</a>
-            </div>
-          </div>
+          <br>  
+          <select class="custom-select mr-sm-2" id="region" required>
+            <option value="">Open this select menu</option>
+              <option value="northamerica">North America</option>
+              <option value="southamerica">South America</option>
+              <option value="europe">Europe</option>
+              <option value="asia">Asia</option>
+              <option value="africa">Africa</option>
+              <option value="austalia">Australia</option>
+          </select>
           <br>
-            <div class="form-group">
+          <br>
+          <div class="form-group">
             <label for="video">Video URL</label>
             <textarea class="form-control" id="video" aria-describedby="video" placeholder="Url"></textarea>
           </div>
