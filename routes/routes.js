@@ -124,7 +124,7 @@ module.exports = function (app) {
     });
 
     app.get("/:region/:id", function (req, res) {
-        db.Food.findOne({
+        db.Food.findAll({
             where: {
                 id: req.params.id
             }
