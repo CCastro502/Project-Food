@@ -14,7 +14,7 @@ module.exports = function (app) {
     app.get("/api/:region", function (req, res) {
         db.Region.findAll({
             where: {
-                region_name: req.params.region
+                url_region_name: req.params.region
             }
         }).then(function (result) {
             return res.json(result);
@@ -62,7 +62,17 @@ module.exports = function (app) {
             return res.json(result);
         })
     });
-    
+
+    app.get("/api/users/:username", function (req, res) {
+        db.User.findAll({
+            where: {
+                username: req.params.username
+            }
+        }).then(function (result) {
+            return res.json(result);
+        })
+    })
+
     app.put("/api/foods/id/:id/upvotes", function (req, res) {
         db.Food.update({
             upvotes: sequelize.literal('upvotes + 1')
@@ -76,14 +86,14 @@ module.exports = function (app) {
     })
 
     app.post("/api/users", function (req, res) {
-        db.User.create(req.body)
+        db.User.create(req.body).then(function (result) {
+            res.json({ users: result });
+        })
     })
 
     app.post("/api/:region", function (req, res) {
         db.Food.create(req.body).then(function (result) {
-           // console.log("The food table create", result);
             db.Region.increment(['posts'], { where: { url_region_name: req.params.region } }).then(function (results) {
-                console.log({ foods: result, regions: results });
                 res.json({ foods: result });
             });
         });
@@ -116,7 +126,7 @@ module.exports = function (app) {
     app.get("/create", function (req, res) {
         return res.render("create");
     });
-    
+
     app.get("/signin", function (req, res) {
         return res.render("signin");
     })
@@ -141,5 +151,5 @@ module.exports = function (app) {
         })
     });
 
-    
+
 }

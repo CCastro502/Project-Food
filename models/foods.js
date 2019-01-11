@@ -45,20 +45,18 @@ module.exports = function (sequelize, DataTypes) {
 
     // Food.associate = function (models) {
        
-    //     Food.belongsTo(models.Region, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
 
-    //     Food.belongsTo(models.User, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
+        Food.belongsTo(models.Region, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+        Food.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
+
     return Food;
 };
-
-
-
