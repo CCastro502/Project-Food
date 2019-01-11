@@ -62,18 +62,7 @@ module.exports = function (app) {
             return res.json(result);
         })
     });
-
-    app.post("/api/:region", function (req, res) {
-        console.log("Length", req.body.length);
-        db.Food.create(req.body).then(function (result) {
-           // console.log("The food table create", result);
-            db.Region.increment(['posts'], { where: { url_region_name: req.params.region } }).then(function (results) {
-                console.log({ foods: result, regions: results });
-                res.json({ foods: result });
-            });
-        });
-    });
-
+    
     app.put("/api/foods/id/:id/upvotes", function (req, res) {
         db.Food.update({
             upvotes: sequelize.literal('upvotes + 1')
@@ -85,6 +74,21 @@ module.exports = function (app) {
                 return res.json(result);
             })
     })
+
+    app.post("/api/users", function (req, res) {
+        db.User.create(req.body)
+    })
+
+    app.post("/api/:region", function (req, res) {
+        db.Food.create(req.body).then(function (result) {
+           // console.log("The food table create", result);
+            db.Region.increment(['posts'], { where: { url_region_name: req.params.region } }).then(function (results) {
+                console.log({ foods: result, regions: results });
+                res.json({ foods: result });
+            });
+        });
+    });
+
 
     // 
     // HTML Routes
@@ -112,6 +116,10 @@ module.exports = function (app) {
     app.get("/create", function (req, res) {
         return res.render("create");
     });
+    
+    app.get("/signin", function (req, res) {
+        return res.render("signin");
+    })
 
     app.get("/:region", function (req, res) {
         db.Food.findAll({
@@ -132,4 +140,6 @@ module.exports = function (app) {
             return res.render("item", { foods: result });
         })
     });
+
+    
 }
