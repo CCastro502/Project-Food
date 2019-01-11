@@ -119,7 +119,7 @@ module.exports = function (app) {
                 region_name: req.params.region
             }
         }).then(function (result) {
-            return res.render("index", { foods: result });
+            return res.render("table", { foods: result });
         })
     });
 
