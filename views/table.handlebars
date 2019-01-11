@@ -1,0 +1,22 @@
+<p>Whatever your Hearts Desire</p>
+
+<!-- Pass in data from server.js -->
+
+<div class="card-body">
+    <table class="table table-bordered" style="width: 100%">
+        {{#each foods}}
+        <tr>
+            <th>
+                <a href='/{{this.region_name}}/{{this.id}}'>
+                    <h2>{{this.food_name}}</h2>
+                    <p>{{this.directions}}</p>
+                </a>
+            </th>
+            <th>
+                <p>{{this.createdAt}}</p>
+            </th>
+        </tr>
+        </a>
+        {{/each}}
+    </table>
+</div>
