@@ -32,10 +32,24 @@ body{
     width: 100%;
     letter-spacing: 170px;
     padding-bottom: 0px;
-    height: 1
-    margin: auto;
+    height: 1;
   }
 
   p{
       text-align: center;
   }
+
+ /* .card-body{
+    opacity: .75;
+    background-color:rgba(255, 255, 255, 0.5);
+ } */
+
+ .container{
+    opacity: .75;
+    background-color:rgba(255, 255, 255, 0.5);
+ }
+
+ h3{
+     color: ivory;
+     text-align: center;
+ }
