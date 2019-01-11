@@ -43,8 +43,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Food.associate = function (models) {
+    // Food.associate = function (models) {
        
+
         Food.belongsTo(models.Region, {
             foreignKey: {
                 allowNull: false
@@ -56,5 +57,6 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
     };
+
     return Food;
 };

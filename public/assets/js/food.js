@@ -112,3 +112,30 @@ $("#signin").on("click", function (event) {
     })
   }
 })
+
+$("#signin").on("click", function (event) {
+  if ($("#email-address").val()) {
+    console.log($("#email-address").val(), $("#username").val(), $("#password").val());
+  }
+  
+
+  // var obj = {
+  //   email: $("#email-address").val(),
+  //   username: $("#username").val(),
+  //   password: $("#password").val(),
+  // }
+
+  // $.ajax("/api/users", {
+  //   type: "POST",
+  //   data: obj
+  // }).then(function (response) {
+  //   console.log(`New user created`);
+  //   location.reload();
+  // });
+})
+
+{/* <div class="form-group">
+            <label for="email">Email address: </label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="abc@123.com">
+        </div> */}
+]
