@@ -53,4 +53,3 @@ $("#submit").on("click", function () {
     location.reload();
   });
 });
->>>>>>> master
