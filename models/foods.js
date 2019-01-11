@@ -50,7 +50,6 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
-
         Food.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
@@ -59,6 +58,3 @@ module.exports = function (sequelize, DataTypes) {
     };
     return Food;
 };
-
-
-
