@@ -5,43 +5,39 @@
         <div class="card-body">
           <h5 class="card-title">Add a Delicious Recipe</h5>
           <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="author-name">Author Name</label>
-            <input type="text" id="author-name" class="form-control" aria-describedby="author-name" placeholder="Austin">
-          </div>
-          <div class="form-group">
-            <label for="food-name">Food Name</label>
-            <input type="text" id="food-name" class="form-control" aria-describedby="food-name" placeholder="Tacos">
-          </div>
-          <div class="form-group">
-            <label for="ingredients">Ingredients</label>
-            <textarea class="form-control" id="ingredients" aria-describedby="ingredients" placeholder="Ground Beef..."></textarea>
-          </div>
-          <div class="form-group">
-            <label for="directions">Cook'n Directions</label>
-            <input type="text" id="directions" class="form-control" aria-describedby="directions" placeholder="Bake on high for...">
-          <br>  
-          <select class="custom-select mr-sm-2" id="region" required>
-            <option value="">Open this select menu</option>
-              <option value="northamerica">North America</option>
-              <option value="southamerica">South America</option>
-              <option value="europe">Europe</option>
-              <option value="asia">Asia</option>
-              <option value="africa">Africa</option>
-              <option value="austalia">Australia</option>
-          </select>
-          <br>
-          <br>
-          <div class="form-group">
-            <label for="video">Video URL</label>
-            <textarea class="form-control" id="video" aria-describedby="video" placeholder="Url"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="country">Country of Origin</label>
-            <textarea class="form-control" id="country" aria-describedby="country" placeholder="Mexico"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Create</button>
-        </form>
+            <div class="form-group">
+              <label for="food-name">Food Name</label>
+              <input type="text" id="food-name" class="form-control" aria-describedby="food-name" placeholder="Tacos">
+            </div>
+            <div class="form-group">
+              <label for="ingredients">Ingredients</label>
+              <textarea class="form-control" id="ingredients" aria-describedby="ingredients" placeholder="Ground Beef..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="directions">Cook'n Directions</label>
+              <input type="text" id="directions" class="form-control" aria-describedby="directions" placeholder="Bake on high for...">
+              <br>
+              <select class="custom-select mr-sm-2" id="region" required>
+                <option value="">Open this select menu</option>
+                <option value="northamerica">North America</option>
+                <option value="southamerica">South America</option>
+                <option value="europe">Europe</option>
+                <option value="asia">Asia</option>
+                <option value="africa">Africa</option>
+                <option value="austalia">Australia</option>
+              </select>
+              <br>
+              <br>
+              <div class="form-group">
+                <label for="video">Video URL</label>
+                <textarea class="form-control" id="video" aria-describedby="video" placeholder="Url"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="country">Country of Origin</label>
+                <textarea class="form-control" id="country" aria-describedby="country" placeholder="Mexico"></textarea>
+              </div>
+              <button id="submit" class="btn btn-primary float-right">Create</button>
+          </form>
         </div>
       </div>
     </div>
@@ -49,3 +45,5 @@
 </div>
 <br>
 <br>
+
+<script src="assets/js/create-food.js"></script>

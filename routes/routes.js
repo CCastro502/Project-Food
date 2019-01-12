@@ -74,15 +74,10 @@ module.exports = function (app) {
     })
 
     app.put("/api/foods/id/:id/upvotes", function (req, res) {
-        db.Food.update({
-            upvotes: sequelize.literal('upvotes + 1')
-        }, {
-                where: {
-                    id: req.params.id
-                }
-            }).then(function (result) {
-                return res.json(result);
-            })
+        console.log("I've been hit");
+        db.Food.increment(['upvotes'], { where: { id: req.params.id } }).then(function (results) {
+            res.json({ foods: result });
+        })
     })
 
     app.post("/api/users", function (req, res) {
@@ -98,7 +93,6 @@ module.exports = function (app) {
             });
         });
     });
-
 
     // 
     // HTML Routes
@@ -150,6 +144,5 @@ module.exports = function (app) {
             return res.render("item", { foods: result });
         })
     });
-
 
 }
