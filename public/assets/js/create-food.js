@@ -4,9 +4,17 @@ $(document).ready(function () {
       event.preventDefault();
 
       if ($("#food-name").val().length < 1 || $("#ingredients").val().length < 1 || $("#directions").val().length < 1 || $("#region").val().length < 1) {
-        alert("You must enter all of areas except for ountry and video");
+        
+        //-------------Materialize modal
+        $('#modal1').modal();
+ 
+        //----------------Bootstrap modal
+        // $('.modal').modal('show');
+        //   $('.close').on('click', function(){
+        //     $('.modal').modal('hide');
+        //   });
         return;
-      };
+      };      
 
       function getRegionId() {
         var region_name = $("#region").val()
@@ -45,10 +53,13 @@ $(document).ready(function () {
         console.log(response, `New Region: ${obj}`);
         // console.log(`New Region: ${obj}`);
         // if (err) throw err;
+        // ---------The below modal is not working. Mike H.
+        $('#modal2').modal();
         alert("You have succesfully posted your recipe");
         $(location).attr('href', '/');
       });
     });
+// ---------- I cant get to this alert. Mike H.
   } else {
     alert("You must log in before you are allowed to create a post.")
     $(location).attr('href', '/');
