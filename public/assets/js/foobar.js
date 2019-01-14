@@ -32,8 +32,15 @@ $.ajax("/api/foods/id/" + id, {
 })
 
 $("#upvote").on("click", function () {
+    var arr = window.location.href.split("/")
+    var id;
+    for (i = 0; i < arr.length; i++) {
+        if (i === (arr.length - 1)) {
+            id = arr[i]
+        }
+    }
     if (sessionStorage.length > 0) {
-        $.ajax("/api/foods/id/" + sessionStorage.getItem("id") + "/upvotes", {
+        $.ajax("/api/foods/id/" + id + "/upvotes", {
             type: "PUT",
         }).then(function (response) {
             console.log("Upvotes have been updated");
