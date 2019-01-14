@@ -6,7 +6,7 @@ module.exports = function (app) {
     // API Routes
     // 
     app.get("/api/foods", function (req, res) {
-        
+
         db.Food.findAll({}).then(function (result) {
             return res.json(result);
         })
@@ -135,9 +135,9 @@ module.exports = function (app) {
                 where: {
                     id: req.params.id
                 }
+            }).then(function (result) {
+                return res.render("profile", { foods: results, users: result })
             })
-        }).then(function (result) {
-            return res.render("profile", { foods: results , users: result })
         })
     })
 
