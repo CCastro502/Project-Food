@@ -74,8 +74,7 @@ module.exports = function (app) {
     })
 
     app.put("/api/foods/id/:id/upvotes", function (req, res) {
-        console.log("I've been hit");
-        db.Food.increment(['upvotes'], { where: { id: req.params.id } }).then(function (results) {
+        db.Food.increment(['upvotes'], { where: { id: req.params.id } }).then(function (result) {
             res.json({ foods: result });
         })
     })
