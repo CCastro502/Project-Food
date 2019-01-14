@@ -6,7 +6,7 @@ module.exports = function (app) {
     // API Routes
     // 
     app.get("/api/foods", function (req, res) {
-        
+
         db.Food.findAll({}).then(function (result) {
             return res.json(result);
         })
@@ -123,6 +123,22 @@ module.exports = function (app) {
 
     app.get("/signin", function (req, res) {
         return res.render("signin");
+    })
+
+    app.get("/profile/:id", function (req, res) {
+        db.Food.findAll({
+            where: {
+                UserId: req.params.id
+            }
+        }).then(function (results) {
+            db.User.findAll({
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (result) {
+                return res.render("profile", { foods: results, users: result })
+            })
+        })
     })
 
     app.get("/:region", function (req, res) {
