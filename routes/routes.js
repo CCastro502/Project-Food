@@ -6,6 +6,7 @@ module.exports = function (app) {
     // API Routes
     // 
     app.get("/api/foods", function (req, res) {
+        
         db.Food.findAll({}).then(function (result) {
             return res.json(result);
         })
