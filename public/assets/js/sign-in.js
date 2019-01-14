@@ -43,10 +43,10 @@ $("#signin").on("click", function (event) {
                     location.reload();
                 })
             } else {
-                alert("Invalid username and/or password.")
+                $('#modal1').modal();
             }
         } else {
-            alert("Invalid email");
+            $('#modal2').modal();
         }
     } else {
         console.log(obj);
@@ -57,10 +57,13 @@ $("#signin").on("click", function (event) {
             if (response[0].password == obj.password) {
                 sessionStorage.setItem('id', JSON.stringify(response[0].id));
                 sessionStorage.setItem('username', JSON.stringify(response[0].username));
-                alert("You've logged in");
-                $(location).attr('href', '/');
+                $('#modal3').modal();
+                setTimeout(myFunction, 2000)
+                function myFunction() {
+                    $(location).attr('href', '/');
+                }
             } else {
-                alert("You did not enter the right credentials");
+                $('#modal4').modal();
                 $("#username").val("");
                 $("#password").val("");
             }

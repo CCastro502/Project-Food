@@ -2,94 +2,72 @@
   <div class="row">
     <div class="col-8 offset-2">
       <div id="form">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Add a Delicious Recipe</h5>
-          <form class="clearfix mb-4" action="POST">
-            <div class="form-group">
-              <label for="food-name">Food Name</label>
-              <input type="text" id="food-name" class="form-control" aria-describedby="food-name" placeholder="Tacos">
-            </div>
-            <div class="form-group">
-              <label for="ingredients">Ingredients</label>
-              <textarea class="form-control" id="ingredients" aria-describedby="ingredients" placeholder="Ground Beef..."></textarea>
-            </div>
-            <div class="form-group">
-              <label for="directions">Cook'n Directions</label>
-              <input type="text" id="directions" class="form-control" aria-describedby="directions" placeholder="Bake on high for...">
-              <br>
-              <select class="custom-select mr-sm-2" id="region" required>
-                <option value="">Open this select menu</option>
-                <option value="northamerica">North America</option>
-                <option value="southamerica">South America</option>
-                <option value="europe">Europe</option>
-                <option value="asia">Asia</option>
-                <option value="africa">Africa</option>
-                <option value="austalia">Australia</option>
-              </select>
-              <br>
-              <br>
+        <div class="card mt-4">
+          <div class="card-body">
+            <h5 class="card-title">Add a Delicious Recipe</h5>
+            <form class="clearfix mb-4" action="POST">
               <div class="form-group">
-                <label for="video">Video URL</label>
-                <textarea class="form-control" id="video" aria-describedby="video" placeholder="Url"></textarea>
+                <label for="food-name">Food Name</label>
+                <input type="text" id="food-name" class="form-control" aria-describedby="food-name" placeholder="Tacos">
               </div>
               <div class="form-group">
-                <label for="country">Country of Origin</label>
-                <textarea class="form-control" id="country" aria-describedby="country" placeholder="Mexico"></textarea>
+                <label for="ingredients">Ingredients</label>
+                <textarea class="form-control" id="ingredients" aria-describedby="ingredients" placeholder="Ground Beef..."></textarea>
               </div>
-              <button id="submit" class="btn btn-primary float-right">Create</button>
-          </form>
+              <div class="form-group">
+                <label for="directions">Cook'n Directions</label>
+                <input type="text" id="directions" class="form-control" aria-describedby="directions" placeholder="Bake on high for...">
+                <br>
+                <select class="custom-select mr-sm-2" id="region" required>
+                  <option value="">Open this select menu</option>
+                  <option value="northamerica">North America</option>
+                  <option value="southamerica">South America</option>
+                  <option value="europe">Europe</option>
+                  <option value="asia">Asia</option>
+                  <option value="africa">Africa</option>
+                  <option value="austalia">Australia</option>
+                </select>
+                <br>
+                <br>
+                <div class="form-group">
+                  <label for="video">Video URL</label>
+                  <textarea class="form-control" id="video" aria-describedby="video" placeholder="Url"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="country">Country of Origin</label>
+                  <textarea class="form-control" id="country" aria-describedby="country" placeholder="Mexico"></textarea>
+                </div>
+                <button id="submit" class="btn btn-primary float-right">Create</button>
+            </form>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   </div>
 </div>
 
-
- 
-{{!-- -------------------Materialize modal --}}
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Submission Error</h4>
-      <p>All fields are required except for Video URL and Country of Origin.</p>
-    </div>
-    {{!-- <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
-    </div> --}}
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Submission Error</h4>
+    <p>All fields are required except for Video URL and Country of Origin.</p>
   </div>
+</div>
 
-  <!-- Modal Structure -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <h4>Submission Error</h4>
-      <p>You have succesfully posted your recipe.</p>
-    </div>
-    {{!-- <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
-    </div> --}}
+<!-- Modal Structure -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <p>You have succesfully posted your recipe.</p>
   </div>
+</div>
 
-{{!-- --------------Bootstrap modal
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Submission Error</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>All fields are required except for Video URL and Country of Origin.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+<!-- Modal Structure -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <h4>Submission Error</h4>
+    <p>You must log in before you are allowed to create a post.</p>
   </div>
-</div> --}}
+</div>
 <br>
 <br>
 

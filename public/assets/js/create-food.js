@@ -1,20 +1,20 @@
 $(document).ready(function () {
-  if (sessionStorage.length > 0) {
+  function getSignInPage() {
+    $(location).attr('href', '/');
+  }
+  if (sessionStorage.length = 0 && ($("#food-name").val().length < 1 || $("#ingredients").val().length < 1 || $("#directions").val().length < 1 || $("#region").val().length < 1)) {
+    $('#modal3').modal();
+
+  } else if (sessionStorage.length > 0) {
     $("#submit").on("click", function () {
       event.preventDefault();
 
       if ($("#food-name").val().length < 1 || $("#ingredients").val().length < 1 || $("#directions").val().length < 1 || $("#region").val().length < 1) {
-        
-        //-------------Materialize modal
+
+        //Materialize modal
         $('#modal1').modal();
- 
-        //----------------Bootstrap modal
-        // $('.modal').modal('show');
-        //   $('.close').on('click', function(){
-        //     $('.modal').modal('hide');
-        //   });
         return;
-      };      
+      };
 
       function getRegionId() {
         var region_name = $("#region").val()
@@ -51,18 +51,16 @@ $(document).ready(function () {
         data: obj
       }).then(function (response) {
         console.log(response, `New Region: ${obj}`);
-        // console.log(`New Region: ${obj}`);
-        // if (err) throw err;
-        // ---------The below modal is not working. Mike H.
         $('#modal2').modal();
-        alert("You have succesfully posted your recipe");
-        $(location).attr('href', '/');
+        setTimeout(getSignInPage, 5000);
       });
     });
-// ---------- I cant get to this alert. Mike H.
-  } else {
-    alert("You must log in before you are allowed to create a post.")
-    $(location).attr('href', '/');
-  }
 
+  } else {
+    $('#modal3').modal();
+    setTimeout(myFunction, 5000)
+    function myFunction() {
+      $(location).attr('href', '/signin');
+    }
+  }
 })
