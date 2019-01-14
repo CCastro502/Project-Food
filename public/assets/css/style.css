@@ -63,3 +63,13 @@ body{
     opacity: .75;
     background-color:rgba(255, 255, 255, 0.5);
  }
+ /* <!--Profile Page--> by tola */ 
+ h7{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    font-family:'Monoton', cursive;
+      display: block;
+      border: 1px solid black;
+      font-size: 40px; 
+      text-align: center; 
+ }
