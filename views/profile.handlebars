@@ -1,0 +1,16 @@
+<h7>My Profile</h7>
+
+<div class="card-body">
+    <table class="table table-bordered" style="width: 100%">
+        {{#each users}}
+        <tr>
+            <th>
+                Foods Created: {{/each}}{{#each foods}}{{this.id}}, {{/each}}                
+                </a>
+            </th>
+            <th>
+                username: {{this.username}}                
+            </th>
+        </tr>
+    </table>
+</div>
