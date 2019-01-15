@@ -17,7 +17,7 @@ $.ajax("/api/foods/id/" + id, {
         try {
             var url = response.video_url;
             var id = url.split("?v=")[1];
-            var embedlink = "http://www.youtube.com/embed/" + id;
+            var embedlink = "https://www.youtube.com/embed/" + id;
             try {
                 $("#myIFrame").html("<iframe width='560' height='315' src='" + embedlink + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>")
             } 
